@@ -39,13 +39,16 @@ o	Outlet Type influences sales, with supermarkets performing better than grocery
 
 o	Found Item Visibility has some zero values (unrealistic).
 
-## •	Handling Missing Values: Some stores did not report all the data, leading to missing values. I imputed missing Item_Weight values using the average weight for similar products and handled Outlet_Size by using Mode across different Outlet Type.
-## •	Feature Engineering: Created new features such as Store Age (calculated from Outlet_Establishment_Year) and standardized Item Fat into Low Fat and Regular categories for better generalization.
+## •	Handling Missing Values: 
+Some stores did not report all the data, leading to missing values. I imputed missing Item_Weight values using the average weight for similar products and handled Outlet_Size by using Mode across different Outlet Type.
+## •	Feature Engineering: 
+Created new features such as Store Age (calculated from Outlet_Establishment_Year) and standardized Item Fat into Low Fat and Regular categories for better generalization.
 # Model Building & Optimization
-I initially trained a Random Forest Regressor, which performed well, but I further improved the accuracy by also using an XGBoost Regressor.
-•	Hyperparameter Tuning: Used GridSearchCV to find the best combination of hyperparameters.
+- I initially trained a Random Forest Regressor, which performed well, but I further improved the accuracy by also using an XGBoost Regressor.
+  
+-	**Hyperparameter Tuning**: Used GridSearchCV to find the best combination of hyperparameters.
 
-•	Segmentation-Based Models: Instead of a single model, I built multiple models based on Outlet Location Type (Tier 1, Tier 2, Tier 3), Item Fat Content, and Outlet Type to capture variations in sales patterns across different categories.
+-	**Segmentation-Based Models:** Instead of a single model, I built multiple models based on Outlet Location Type (Tier 1, Tier 2, Tier 3), Item Fat Content, and Outlet Type to capture variations in sales patterns across different categories.
 # Next Steps
 1.	Refine Feature: Analyze features interaction to understand combination of feature that could help us in improving the performance of the Model.
 2.	Address Item Visibility Issues: Since some products have 0 visibility, adjust them based on the average visibility for similar items.
